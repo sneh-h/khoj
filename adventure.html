@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#ff5722">
+    <title>Adventure Services</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        header {
+            background: #ff5722;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2 {
+            color: #ff5722;
+            margin-top: 0;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .section {
+            margin-bottom: 2rem;
+        }
+
+        .services-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .services-list li {
+            background: #ffe0b2;
+            border: 1px solid #ff5722;
+            border-radius: 5px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+
+        .services-list li:hover {
+            background-color: #ffccbc;
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .services-list li h3 {
+            margin-top: 0;
+            color: #e64a19;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .testimonial {
+            background: #ffe0b2;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 1rem;
+            font-style: italic;
+        }
+
+        .booking-info table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        .booking-info th, .booking-info td {
+            border: 1px solid #ddd;
+            padding: 0.75rem;
+            text-align: left;
+        }
+
+        .booking-info th {
+            background-color: #ff5722;
+            color: #fff;
+        }
+
+        .back-button {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background-color: #ff5722;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+            margin-top: 1.5rem;
+        }
+
+        .back-button:hover {
+            background-color: #e64a19;
+        }
+
+        .contact-info {
+            margin-top: 2rem;
+            background: #ffe0b2;
+            padding: 1rem;
+            border-radius: 5px;
+        }
+
+        .contact-info p {
+            margin: 0.5rem 0;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Adventure Services</h1>
+    </header>
+    <div class="container">
+        <section class="section">
+            <h2>Overview</h2>
+            <p>Our Adventure Services offer thrilling experiences for those who seek excitement and exploration. From heart-pounding activities to serene nature excursions, our expert guides ensure a safe and unforgettable adventure. Explore the wild with confidence and make the most of your adventurous spirit with our tailor-made services.</p>
+        </section>
+
+        <section class="section">
+            <h2>Services</h2>
+            <ul class="services-list">
+                <li>
+                    <h3>Mountain Hiking</h3>
+                    <p>Conquer stunning peaks with our guided mountain hiking tours. Suitable for all skill levels, these hikes offer breathtaking views and a sense of accomplishment.</p>
+                </li>
+                <li>
+                    <h3>White-Water Rafting</h3>
+                    <p>Experience the thrill of navigating turbulent rapids with our expert raft guides. Perfect for adventure enthusiasts looking for an adrenaline rush.</p>
+                </li>
+                <li>
+                    <h3>Wildlife Safari</h3>
+                    <p>Embark on a safari to observe wildlife in their natural habitat. Our knowledgeable guides provide insightful commentary and ensure a respectful and exciting experience.</p>
+                </li>
+                <li>
+                    <h3>Rock Climbing</h3>
+                    <p>Challenge yourself with our rock climbing excursions. Whether you're a beginner or an experienced climber, our guides offer expert instruction and safety support.</p>
+                </li>
+                <li>
+                    <h3>Camping Adventures</h3>
+                    <p>Immerse yourself in nature with our organized camping trips. Enjoy the great outdoors with comfort and safety, guided by professionals who ensure a memorable experience.</p>
+                </li>
+            </ul>
+        </section>
+
+        <section class="section booking-info">
+            <h2>Booking Information</h2>
+            <p>To book our Adventure Services, please visit our <a href="booking.html" style="color: #ff5722; text-decoration: none;">Booking Page</a>. For any specific queries or custom adventure plans, don't hesitate to get in touch with us directly.</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Service</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Mountain Hiking</td>
+                        <td>Rs200</td>
+                    </tr>
+                    <tr>
+                        <td>White-Water Rafting</td>
+                        <td>Rs250</td>
+                    </tr>
+                    <tr>
+                        <td>Wildlife Safari</td>
+                        <td>Rs300</td>
+                    </tr>
+                    <tr>
+                        <td>Rock Climbing</td>
+                        <td>Rs180</td>
+                    </tr>
+                    <tr>
+                        <td>Camping Adventures</td>
+                        <td>Rs220</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="section">
+            <h2>Customer Testimonials</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial">"The white-water rafting experience was exhilarating! The guides were professional and ensured our safety while making the adventure thrilling." - Anita</div>
+                <div class="testimonial">"Our hiking trip was fantastic. The guide was very knowledgeable and the views were spectacular. Highly recommended for adventure seekers!" - Kusha</div>
+                <div class="testimonial">"The wildlife safari was an unforgettable experience. Seeing animals in their natural habitat was incredible, and the guide's insights made it even better." - Taylor</div>
+                <div class="testimonial">"Rock climbing was challenging yet incredibly rewarding. The guide's support and instruction were top-notch. Can't wait for the next adventure!" - Mamta</div>
+            </div>
+        </section>
+
+        <a href="khoj.html" class="back-button">Back to Services</a>
+    </div>
+</body>
+
+</html>

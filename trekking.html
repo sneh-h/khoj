@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#4CAF50">
+    <title>Trekking Services</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e8f5e9;
+        }
+
+        header {
+            background: #4CAF50;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2 {
+            color: #4CAF50;
+            margin-top: 0;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .section {
+            margin-bottom: 2rem;
+        }
+
+        .services-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .services-list li {
+            background: #dcedc8;
+            border: 1px solid #4CAF50;
+            border-radius: 5px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+
+        .services-list li:hover {
+            background-color: #c5e1a5;
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .services-list li h3 {
+            margin-top: 0;
+            color: #388E3C;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .testimonial {
+            background: #dcedc8;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 1rem;
+            font-style: italic;
+        }
+
+        .booking-info table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        .booking-info th, .booking-info td {
+            border: 1px solid #ddd;
+            padding: 0.75rem;
+            text-align: left;
+        }
+
+        .booking-info th {
+            background-color: #4CAF50;
+            color: #fff;
+        }
+
+        .back-button {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background-color: #4CAF50;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+            margin-top: 1.5rem;
+        }
+
+        .back-button:hover {
+            background-color: #388E3C;
+        }
+
+        .contact-info {
+            margin-top: 2rem;
+            background: #dcedc8;
+            padding: 1rem;
+            border-radius: 5px;
+        }
+
+        .contact-info p {
+            margin: 0.5rem 0;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Trekking Services</h1>
+    </header>
+    <div class="container">
+        <section class="section">
+            <h2>Overview</h2>
+            <p>Our Trekking Services are designed for those who crave adventure and exploration in nature's grandeur. Whether you're a novice or an experienced trekker, our expertly guided treks promise unforgettable experiences, breathtaking views, and a chance to reconnect with the natural world.</p>
+        </section>
+
+        <section class="section">
+            <h2>Services</h2>
+            <ul class="services-list">
+                <li>
+                    <h3>Day Treks</h3>
+                    <p>Perfect for those with limited time, our day treks offer a refreshing escape into nature. Enjoy scenic routes, guided by experts who will share their knowledge of the local flora and fauna.</p>
+                </li>
+                <li>
+                    <h3>Weekend Treks</h3>
+                    <p>Escape the hustle and bustle with a weekend trek that combines adventure with relaxation. Explore diverse landscapes, camp under the stars, and return rejuvenated.</p>
+                </li>
+                <li>
+                    <h3>Multi-Day Expeditions</h3>
+                    <p>For the dedicated adventurer, our multi-day treks offer an immersive experience in remote and pristine environments. Prepare for challenging routes, breathtaking vistas, and a true sense of accomplishment.</p>
+                </li>
+                <li>
+                    <h3>Custom Treks</h3>
+                    <p>Design your perfect trekking adventure with our custom trek options. Tailor the route, duration, and difficulty to suit your preferences and needs, ensuring a personalized adventure.</p>
+                </li>
+                <li>
+                    <h3>Family Treks</h3>
+                    <p>Bring the whole family on an enjoyable and safe trekking experience. Our family-friendly treks are designed to be engaging and suitable for all ages, providing fun and educational experiences for everyone.</p>
+                </li>
+            </ul>
+        </section>
+
+        <section class="section booking-info">
+            <h2>Booking Information</h2>
+            <p>Ready to embark on your trekking adventure? Visit our <a href="booking.html" style="color: #4CAF50; text-decoration: none;">Booking Page</a> for more details and to make your reservation. If you have any specific requests or need assistance, feel free to contact us.</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Service</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Day Treks</td>
+                        <td>Rs150</td>
+                    </tr>
+                    <tr>
+                        <td>Weekend Treks</td>
+                        <td>Rs350</td>
+                    </tr>
+                    <tr>
+                        <td>Multi-Day Expeditions</td>
+                        <td>Rs600</td>
+                    </tr>
+                    <tr>
+                        <td>Custom Treks</td>
+                        <td>Rs200+ (depending on customization)</td>
+                    </tr>
+                    <tr>
+                        <td>Family Treks</td>
+                        <td>Rs250</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="section">
+            <h2>Customer Testimonials</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial">"The day trek was a fantastic escape from city life. The guide was very knowledgeable, and the trail was perfectly chosen for a quick but refreshing adventure." - Eshita</div>
+                <div class="testimonial">"Our weekend trek was an amazing experience. The scenery was stunning, and the camping was comfortable. A perfect weekend getaway!" - Laalu</div>
+                <div class="testimonial">"The multi-day expedition was challenging but incredibly rewarding. The guides were exceptional, and the landscapes were breathtaking." - Nayan</div>
+                <div class="testimonial">"The custom trek was exactly what we wanted. The ability to design our adventure made it truly special. Highly recommend for anyone looking for a personalized experience." - Omprakash</div>
+            </div>
+        </section>
+
+        <a href="khoj.html" class="back-button">Back to Services</a>
+    </div>
+</body>
+
+</html>

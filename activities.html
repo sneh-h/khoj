@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historical Tours</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        #historical-tours {
+            background-color: #fff;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        #historical-tours h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .box-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .box {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            overflow: hidden;
+            width: calc(33% - 20px);
+            text-align: left;
+            transition: transform 0.3s ease;
+        }
+        .box img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .box h3 {
+            margin: 15px;
+            font-size: 1.5em;
+            color: #333;
+        }
+        .box p {
+            margin: 0 15px 15px;
+            color: #666;
+        }
+        .box:hover {
+            transform: scale(1.05);
+        }
+        @media (max-width: 768px) {
+            .box {
+                width: calc(50% - 20px);
+            }
+        }
+        @media (max-width: 480px) {
+            .box {
+                width: calc(100% - 20px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <section id="historical-tours">
+        <h2>Historical Tours</h2>
+        <div class="box-container">
+            <div class="box">
+                <img src="activity1.jpg" alt="Mysore Palace">
+                <h3>Mysore Palace, Karnataka</h3>
+                <p>Explore the opulent Mysore Palace, an architectural marvel of the Wodeyar dynasty with stunning Indo-Saracenic architecture.</p>
+            </div>
+            <div class="box">
+                <img src="activity2.jpeg" alt="Qutub Minar">
+                <h3>Qutub Minar, Delhi</h3>
+                <p>Discover the Qutub Minar, the tallest brick minaret in the world, showcasing a significant example of Indo-Islamic architecture.</p>
+            </div>
+            <div class="box">
+                <img src="activity3.jpg" alt="Hampi">
+                <h3>Hampi, Karnataka</h3>
+                <p>Wander through the ruins of Hampi, a UNESCO World Heritage site with ancient temples, palaces, and market streets.</p>
+            </div>
+            <div class="box">
+                <img src="activity4.jpg" alt="Rajasthan Forts">
+                <h3>Rajasthan Forts and Palaces</h3>
+                <p>Experience the grandeur of Rajasthan's forts and palaces, including Amber Fort and Mehrangarh Fort, showcasing royal history.</p>
+            </div>
+            <div class="box">
+                <img src="ajanta.jpeg" alt="Ajanta and Ellora Caves">
+                <h3>Ajanta and Ellora Caves, Maharashtra</h3>
+                <p>Explore the Ajanta and Ellora Caves, renowned for their ancient rock-cut temples and exquisite frescoes and sculptures.</p>
+            </div>
+            <div class="box">
+                <img src="activity5.jpg" alt="Varanasi">
+                <h3>Varanasi, Uttar Pradesh</h3>
+                <p>Dive into the spiritual and historical significance of Varanasi, one of the world's oldest cities with temples and ghats.</p>
+            </div>
+            <div class="box">
+                <img src="activity7.jpeg" alt="Red Fort">
+                <h3>Red Fort, Delhi</h3>
+                <p>Visit the Red Fort, a massive fortification in Old Delhi, known for its red sandstone walls and historical significance.</p>
+            </div>
+            <div class="box">
+                <img src="activity9.jpg" alt="Fatehpur Sikri">
+                <h3>Fatehpur Sikri, Uttar Pradesh</h3>
+                <p>Explore Fatehpur Sikri, the former Mughal capital with well-preserved Mughal architecture and historical grandeur.</p>
+            </div>
+            <div class="box">
+                <img src="elephanta.jpeg" alt="Elephanta Caves">
+                <h3>Elephanta Caves, Maharashtra</h3>
+                <p>Discover the Elephanta Caves, famous for their Hindu and Buddhist rock-cut sculptures and ancient religious art.</p>
+            </div>
+            <div class="box">
+                <img src="activity8.jpeg" alt="Khajuraho Temples">
+                <h3>Khajuraho Temples, Madhya Pradesh</h3>
+                <p>Marvel at the Khajuraho Temples, known for their intricate erotic sculptures and architectural brilliance from the Chandela dynasty.</p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#FFC107">
+    <title>Camping Services</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fffde7;
+        }
+
+        header {
+            background: #FFC107;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2 {
+            color: #FFC107;
+            margin-top: 0;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .section {
+            margin-bottom: 2rem;
+        }
+
+        .services-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .services-list li {
+            background: #fff3e0;
+            border: 1px solid #FFC107;
+            border-radius: 5px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+
+        .services-list li:hover {
+            background-color: #ffe0b2;
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .services-list li h3 {
+            margin-top: 0;
+            color: #FF6F00;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .testimonial {
+            background: #fff3e0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 1rem;
+            font-style: italic;
+        }
+
+        .booking-info table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        .booking-info th, .booking-info td {
+            border: 1px solid #ddd;
+            padding: 0.75rem;
+            text-align: left;
+        }
+
+        .booking-info th {
+            background-color: #FFC107;
+            color: #fff;
+        }
+
+        .back-button {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background-color: #FFC107;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+            margin-top: 1.5rem;
+        }
+
+        .back-button:hover {
+            background-color: #FFB300;
+        }
+
+        .contact-info {
+            margin-top: 2rem;
+            background: #fff3e0;
+            padding: 1rem;
+            border-radius: 5px;
+        }
+
+        .contact-info p {
+            margin: 0.5rem 0;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Camping Services</h1>
+    </header>
+    <div class="container">
+        <section class="section">
+            <h2>Overview</h2>
+            <p>Experience the great outdoors with our comprehensive camping services, designed for adventurers of all levels. From serene family getaways to rugged wilderness experiences, we offer everything you need to enjoy nature at its finest.</p>
+        </section>
+
+        <section class="section">
+            <h2>Services</h2>
+            <ul class="services-list">
+                <li>
+                    <h3>Family Camping</h3>
+                    <p>Create lasting memories with your loved ones in a safe and enjoyable environment. Our family camping packages include kid-friendly activities, guided nature walks, and all the essentials for a fun-filled experience.</p>
+                </li>
+                <li>
+                    <h3>Backpacking Trips</h3>
+                    <p>For the more adventurous, our backpacking trips provide a chance to explore remote locations and test your endurance. Enjoy the solitude of nature and the thrill of discovering new trails.</p>
+                </li>
+                <li>
+                    <h3>Luxury Camping (Glamping)</h3>
+                    <p>Combine the beauty of nature with the comfort of modern amenities. Our luxury camping, or glamping, options offer upscale tents, comfortable bedding, and gourmet meals, ensuring a truly relaxing experience.</p>
+                </li>
+                <li>
+                    <h3>Group Camps</h3>
+                    <p>Perfect for clubs, organizations, or large families, our group camps are designed to accommodate multiple guests with shared facilities and organized activities. Enjoy a group bonding experience in the heart of nature.</p>
+                </li>
+                <li>
+                    <h3>Custom Camping Experiences</h3>
+                    <p>Have specific needs or preferences? Work with us to create a custom camping experience that suits your unique requirements, whether it’s a special occasion or a unique adventure.</p>
+                </li>
+            </ul>
+        </section>
+
+        <section class="section booking-info">
+            <h2>Booking Information</h2>
+            <p>Ready to book your camping adventure? Visit our <a href="booking.html" style="color: #FFC107; text-decoration: none;">Booking Page</a> for detailed information and to make a reservation. For any specific requests or additional assistance, don’t hesitate to contact us.</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Service</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Family Camping</td>
+                        <td>Rs25000</td>
+                    </tr>
+                    <tr>
+                        <td>Backpacking Trips</td>
+                        <td>Rs30000</td>
+                    </tr>
+                    <tr>
+                        <td>Luxury Camping (Glamping)</td>
+                        <td>Rs50000</td>
+                    </tr>
+                    <tr>
+                        <td>Group Camps</td>
+                        <td>Rs54000</td>
+                    </tr>
+                    <tr>
+                        <td>Custom Camping Experiences</td>
+                        <td>Rs100000+ (depending on customization)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="section">
+            <h2>Customer Testimonials</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial">"Our family camping trip was fantastic! The kids loved the activities, and we enjoyed the beautiful scenery. Everything was well-organized and comfortable." - Seema</div>
+                <div class="testimonial">"The backpacking trip was an incredible adventure. The guide was excellent, and the trails were breathtaking. A true escape into nature." - Shubham</div>
+                <div class="testimonial">"Glamping was such a treat! The tents were luxurious, and the meals were gourmet. It felt like we were in a five-star hotel in the middle of the forest." - Yash</div>
+                <div class="testimonial">"Our group camp was perfect for our club. The facilities were excellent, and the group activities were well-planned. We had a blast!" - Siya</div>
+            </div>
+        </section>
+
+        <a href="khoj.html" class="back-button">Back to Services</a>
+    </div>
+</body>
+
+</html>

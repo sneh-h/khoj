@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#008080">
+    <title>Tour Guide Service</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        header {
+            background: #00796b;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2 {
+            color: #00796b;
+            margin-top: 0;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .section {
+            margin-bottom: 2rem;
+        }
+
+        .features-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .features-list li {
+            background: #e0f2f1;
+            border: 1px solid #00796b;
+            border-radius: 5px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+
+        .features-list li:hover {
+            background-color: #b2dfdb;
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .features-list li h3 {
+            margin-top: 0;
+            color: #004d40;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .testimonial {
+            background: #e0f2f1;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 1rem;
+            font-style: italic;
+        }
+
+        .booking-info table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        .booking-info th, .booking-info td {
+            border: 1px solid #ddd;
+            padding: 0.75rem;
+            text-align: left;
+        }
+
+        .booking-info th {
+            background-color: #00796b;
+            color: #fff;
+        }
+
+        .back-button {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background-color: #00796b;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+            margin-top: 1.5rem;
+        }
+
+        .back-button:hover {
+            background-color: #004d40;
+        }
+
+        .contact-info {
+            margin-top: 2rem;
+            background: #e0f2f1;
+            padding: 1rem;
+            border-radius: 5px;
+        }
+
+        .contact-info p {
+            margin: 0.5rem 0;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Tour Guide Service</h1>
+    </header>
+    <div class="container">
+        <section class="section">
+            <h2>Overview</h2>
+            <p>Our Tour Guide Service offers expert guides who are well-versed in the history, culture, and hidden gems of various destinations. Whether you are looking for a city tour, historical exploration, or an off-the-beaten-path adventure, our guides provide engaging and informative experiences tailored to your interests.</p>
+        </section>
+
+        <section class="section">
+            <h2>Features</h2>
+            <ul class="features-list">
+                <li>
+                    <h3>Experienced Guides</h3>
+                    <p>Our guides are knowledgeable and friendly, with a deep understanding of local history and culture, ensuring a rich and engaging experience.</p>
+                </li>
+                <li>
+                    <h3>Customizable Tours</h3>
+                    <p>We offer tailored itineraries based on your interests and preferences, so you get the most out of your tour experience.</p>
+                </li>
+                <li>
+                    <h3>Interactive Experiences</h3>
+                    <p>Enjoy engaging and interactive storytelling that brings historical sites and landmarks to life, making each tour memorable.</p>
+                </li>
+                <li>
+                    <h3>Local Insights</h3>
+                    <p>Get valuable tips on local dining, shopping, and attractions for a richer and more immersive experience in your destination.</p>
+                </li>
+                <li>
+                    <h3>Multi-Language Support</h3>
+                    <p>Our guides are available in multiple languages to cater to international visitors, ensuring clear and effective communication.</p>
+                </li>
+            </ul>
+        </section>
+
+        <section class="section booking-info">
+            <h2>Booking Information</h2>
+            <p>To book our Tour Guide Service, please visit our <a href="booking.html" style="color: #00796b; text-decoration: none;">Booking Page</a>. You can also contact us directly for custom tours or any specific requirements you may have.</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Service</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Half-Day City Tour</td>
+                        <td>Rs150</td>
+                    </tr>
+                    <tr>
+                        <td>Full-Day Historical Tour</td>
+                        <td>Rs250</td>
+                    </tr>
+                    <tr>
+                        <td>Custom Private Tour</td>
+                        <td>Rs300</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="section">
+            <h2>Customer Testimonials</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial">"The tour guide was amazing! They provided fascinating insights and made the whole experience enjoyable. Highly recommend!" - Priya</div>
+                <div class="testimonial">"A fantastic tour with a knowledgeable guide who made history come alive. Great service and a memorable day!" - Ravi</div>
+                <div class="testimonial">"Our guide was professional and friendly, offering valuable tips and information. The tour was well-organized and enjoyable." - Ayesha</div>
+                <div class="testimonial">"Excellent service! The guide was very knowledgeable and the tour was well-paced and engaging. Worth every penny." - Sanjay</div>
+            </div>
+        </section>
+
+        <a href="khoj.html" class="back-button">Back to Services</a>
+    </div>
+</body>
+
+</html>

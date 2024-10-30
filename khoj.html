@@ -1,0 +1,1460 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#008080">
+    <title>Khoj</title>
+    <style>
+        body {
+            font-family: Georgia, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #e0f2f1;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: #00796b;
+            color: #fff;
+            padding: 1rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            animation: slideDown 0.5s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+            }
+
+            to {
+                transform: translateY(0);
+            }
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo a {
+            font-size: 2rem;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            animation: fadeIn 1s ease-out;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .logo a img {
+            width: 30px;
+            height: auto;
+            margin-right: 10px;
+            animation: fadeIn 2s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .menu {
+            display: flex;
+        }
+
+        .menu a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-size: 1rem;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .menu a::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: #fff;
+            color: #fff;
+            transition: width 0.3s;
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+        }
+
+        .menu a:hover::after {
+            width: 100%;
+        }
+
+        .title {
+            position: relative;
+            height: 600px;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            overflow: hidden;
+            margin: 0;
+        }
+
+        .title video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        .title::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 1;
+        }
+
+        .title-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .title h1,
+        .title p,
+        .title button {
+            position: relative;
+            z-index: 2;
+        }
+
+        .title h1 {
+            font-size: 3.5rem;
+            margin: 0;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+        }
+
+        .title p {
+            font-size: 1.5rem;
+            margin: 1rem 0;
+        }
+
+        .title button {
+            padding: 0.75rem 2rem;
+            border: none;
+            background-color: rgba(0, 77, 64, 0.5);
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .title button:hover {
+            background-color: #00796b;
+            transform: scale(1.05);
+        }
+
+        .search-bar {
+            margin: 3rem auto;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .search-bar input[type="text"] {
+            padding: 0.75rem;
+            width: 300px;
+            border: 2px solid #00796b;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .search-bar button {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            background-color: #00796b;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .search-bar button:hover {
+            background-color: #004d40;
+            transform: scale(1.05);
+        }
+
+        .search-bar button:hover {
+            background-color: #004d40;
+            transform: scale(1.05);
+        }
+
+        .dropdown-container {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .dropdown {
+            padding: 0.75rem;
+            border: 2px solid #00796b;
+            border-radius: 5px;
+            font-size: 1rem;
+            background-color: rgba(255, 255, 255, 0.5);
+            color: #333;
+            transition: border-color 0.3s ease;
+            width: 200px;
+        }
+
+        .dropdown:focus {
+            border-color: #004d40;
+        }
+
+        .services {
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #fff;
+
+        }
+
+        .heading-title {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            color: #004d40;
+        }
+
+        .box-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .box {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            text-align: center;
+            width: 250px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .box img {
+            width: 100%;
+            height: 200px;
+            display: block;
+            border-bottom: 2px solid #ddd;
+        }
+
+        .box h3 {
+            font-size: 1.5em;
+            margin: 15px 0;
+            color: #444;
+        }
+
+        .box:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 3rem auto;
+            color: #004d40;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+        }
+
+        .card {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin: 1rem;
+            padding: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover img {
+            transform: scale(1.029);
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .card h3 {
+            margin: 1rem 0;
+            font-size: 1.5rem;
+        }
+
+        .card p {
+            color: #555;
+        }
+
+        .star-rating {
+            display: flex;
+            font-size: 1.2rem;
+            color: #FFD700;
+            margin-top: 0.5rem;
+        }
+
+        .star-rating .star {
+            margin: 0 0.1rem;
+        }
+
+        .star-rating .star.checked {
+            color: #FFD700;
+        }
+
+        .star-rating .star.unchecked {
+            color: #e0e0e0;
+        }
+
+        .about {
+            max-width: 900px;
+            width: 100%;
+            padding: 2rem;
+            margin: 3rem auto;
+            background: url('aboutus.webp') no-repeat center fixed;
+            background-size: cover;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            margin-top: 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .aboutus h2 {
+            color: #008080;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .aboutus h2::after {
+            content: "";
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: #008080;
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            transition: width 0.3s ease;
+        }
+
+        .aboutus h2:hover::after {
+            width: 100px;
+        }
+
+        .aboutus p {
+            line-height: 1.8;
+            margin: 1rem 0;
+            color: #070707;
+        }
+
+        .aboutus ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .aboutus ul li {
+            margin: 1rem 0;
+            padding: 1rem;
+            border-left: 4px solid #008080;
+            background: rgba(255, 255, 255, 0.9);
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .aboutus ul li:hover {
+            background: #008080;
+            color: #fff;
+            transform: translateX(10px);
+        }
+
+        .aboutus strong {
+            color: #FF5722;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(2.5px);
+            padding-top: 60px;
+            transition: all 0.5s ease-in-out;
+        }
+
+        .modal-content {
+            background-color: rgba(255, 255, 255, 1.0);
+            margin: 5% auto;
+            padding: 2rem;
+            border-radius: 15px;
+            width: 80%;
+            max-width: 600px;
+            background: url('booking.jpg') no-repeat center center fixed;
+            background-size: cover;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+            position: relative;
+            animation: slideDown 0.6s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .close {
+            position: absolute;
+            right: 20px;
+            top: 15px;
+            color: #fff;
+            font-size: 30px;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #ff5252;
+            cursor: pointer;
+        }
+
+        .booking-form h1 {
+            color: #fff;
+            font-size: 2rem;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .booking-form label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+            color: #fff;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        .booking-form input,
+        .booking-form select,
+        .booking-form textarea,
+        .booking-form button {
+            display: block;
+            width: 100%;
+            padding: 0.75rem;
+            margin: 0.5rem 0;
+            border-radius: 8px;
+            border: 2px solid #ff5722;
+            font-size: 1rem;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .booking-form textarea {
+            resize: vertical;
+        }
+
+        .booking-form button {
+            background-color: #ff5722;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            padding: 0.75rem;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .booking-form button:hover {
+            background-color: #e64a19;
+            transform: translateY(-3px);
+        }
+
+
+        .custom-select {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .select-btn {
+            background-color: #00796b;
+            color: white;
+            border: none;
+            padding: 10px;
+            text-align: left;
+            width: 100%;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            text-align: center;
+        }
+
+        .select-options {
+            display: none;
+            position: absolute;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            z-index: 1;
+            width: 100%;
+            max-height: 300px;
+            overflow-y: auto;
+            top: 100%;
+            left: 0;
+        }
+
+        .select-option {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .select-option:hover {
+            background-color: #f0f0f0;
+        }
+
+        .tour-image {
+            width: 80px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        .tour-info h3 {
+            margin: 0;
+            color: #00796b;
+            font-size: 1.2rem;
+        }
+
+        .tour-info p {
+            margin: 5px 0;
+            color: #333;
+            font-size:0.8rem;
+        }
+
+        .select-option.selected {
+            background-color: #00796b;
+            color: white;
+        }
+
+        .select-option.selected .tour-info h3 {
+            color: #ffffff;
+        }
+
+        .select-options.show {
+            display: block;
+        }
+
+        #tour {
+            display: none;
+        }
+
+
+        .reviews {
+            padding: 2rem;
+            background-color: #e0f2f1;
+            text-align: center;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+
+        .reviews h2 {
+            margin-bottom: 1.5rem;
+            color: #004d40;
+            font-size: 2.5rem;
+            font-weight: 600;
+        }
+
+        .review-container {
+            display: flex;
+            flex-direction: row;
+            gap: 1rem;
+            justify-content: center;
+            align-items: flex-start;
+            flex-wrap: nowrap;
+        }
+
+        .review {
+            background: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 1.5rem;
+            max-width: 250px;
+            flex: 0 1 auto;
+            text-align: left;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .review:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .review p {
+            margin: 0 0 1rem 0;
+            font-size: 1rem;
+            color: #555;
+        }
+
+        .review .author {
+            font-size: 0.9rem;
+            color: #004d40;
+            font-weight: 500;
+        }
+
+        .arrow {
+            background: #ffffff;
+            border: 2px solid #004d40;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.8rem;
+            color: #004d40;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .arrow:hover {
+            background-color: #004d40;
+            color: #ffffff;
+        }
+
+        .packages {
+            padding: 2rem;
+            background-color: #e0f2f1;
+            border-radius: 8px;
+        }
+
+        .packages h1 {
+            text-align: center;
+            color: #004d40;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+        }
+
+        .categories {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        .category {
+            background-color: #ffffff;
+            border: 1px solid #004d40;
+            border-radius: 8px;
+            padding: 1rem 1.5rem;
+            margin: 0.5rem;
+            text-decoration: none;
+            color: #004d40;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 77, 64, 0.2);
+        }
+
+        .category:hover {
+            background-color: #b2dfdb;
+            box-shadow: 0 6px 12px rgba(0, 77, 64, 0.3);
+            transform: translateY(-3px);
+        }
+
+        .tours {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(5, 1fr));
+            gap: 1rem;
+            margin: 0 auto;
+            max-width: 1200px;
+        }
+
+        .tour-category {
+            display: none;
+        }
+
+        .tour-category:target {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .tour {
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .tour:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .tour h3 {
+            margin: 0;
+            font-size: 1.2rem;
+            color: #004d40;
+        }
+
+        .tour p {
+            margin: 0.5rem 0;
+            color: #555;
+        }
+
+        .footer {
+            background: #00796b;
+            color: #fff;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-section {
+            flex: 1;
+            margin: 1rem;
+        }
+
+        .footer-section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-info p,
+        .quick-links ul {
+            margin: 0.5rem 0;
+        }
+
+        .quick-links ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .quick-links ul li {
+            margin: 0.5rem 0;
+        }
+
+        .quick-links ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .quick-links ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .social-media {
+            margin-top: 1rem;
+        }
+
+        .social-icon {
+            display: inline-block;
+            background: #fff;
+            color: #00796b;
+            border-radius: 50%;
+            width: 2rem;
+            height: 2rem;
+            line-height: 2rem;
+            text-align: center;
+            margin: 0 0.5rem;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .social-icon:hover {
+            background: #fff;
+            color: #00796b;
+        }
+
+        .footer-bottom {
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="khoj.html">
+                    <img src="logo.png" alt="Khoj Logo"> Khoj
+                </a>
+            </div>
+            <div class="menu">
+                <a href="#home">Home</a>
+                <a href="#tours">Tours</a>
+                <a href="#service">Services</a>
+                <a href="#about">About Us</a>
+                <a href="javascript:void(0)"
+                    onclick="document.getElementById('bookingModal').style.display='block'">Book</a>
+                <a href="#packages">Packages</a>
+                <a href="blog.html">Blog</a>
+
+            </div>
+        </nav>
+    </header>
+
+    <section id="home">
+        <section class="title">
+            <video autoplay muted loop>
+                <source src="tour.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="title-content">
+                <h1>Discover Yourself in Perfect Adventure</h1>
+                <p>Find the best tours and activities around the world</p>
+                <button onclick="window.location.href='#tours'">Khoj</button>
+            </div>
+        </section>
+        <section class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search for tours or activities...">
+            <button type="button" onclick="performSearch()">Search</button>
+            <div class="dropdown-container">
+                <select class="dropdown" aria-label="Destination" onchange="location=this.value;">
+                    <option value="" disabled selected>Destination</option>
+                    <option value="AP">Andhra Pradesh</option>
+                    <option value="AR">Arunachal Pradesh</option>
+                    <option value="AS">Assam</option>
+                    <option value="BR">Bihar</option>
+                    <option value="CT">Chhattisgarh</option>
+                    <option value="GA">Goa</option>
+                    <option value="GJ">Gujarat</option>
+                    <option value="HR">Haryana</option>
+                    <option value="HP">Himachal Pradesh</option>
+                    <option value="JK">Jammu and Kashmir</option>
+                    <option value="JH">Jharkhand</option>
+                    <option value="KA">Karnataka</option>
+                    <option value="KL">Kerala</option>
+                    <option value="MP">Madhya Pradesh</option>
+                    <option value="destination.html">Maharashtra</option>
+                    <option value="MN">Manipur</option>
+                    <option value="ML">Meghalaya</option>
+                    <option value="MZ">Mizoram</option>
+                    <option value="NL">Nagaland</option>
+                    <option value="OD">Odisha</option>
+                    <option value="PB">Punjab</option>
+                    <option value="RJ">Rajasthan</option>
+                    <option value="SK">Sikkim</option>
+                    <option value="TN">Tamil Nadu</option>
+                    <option value="TS">Telangana</option>
+                    <option value="TR">Tripura</option>
+                    <option value="UP">Uttar Pradesh</option>
+                    <option value="UT">Uttarakhand</option>
+                    <option value="WB">West Bengal</option>
+                    <option value="AN">Andaman and Nicobar Islands</option>
+                    <option value="CH">Chandigarh</option>
+                    <option value="DN">Dadra and Nagar Haveli and Daman and Diu</option>
+                    <option value="DL">Delhi</option>
+                    <option value="LD">Lakshadweep</option>
+                    <option value="PY">Puducherry</option>
+                    <option value="LA">Ladakh</option>
+                </select>
+                <select class="dropdown" aria-label="Activities" onchange="location=this.value;">
+                    <option value="" disabled selected>Activities</option>
+                    <option value="sightseeing">Sightseeing</option>
+                    <option value="cultural_tours">Cultural Tours</option>
+                    <option value="activities.html">Historical Tours</option>
+                    <option value="museum_visits">Museum Visits</option>
+                    <option value="city_tours">City Tours</option>
+                    <option value="hiking">Hiking</option>
+                    <option value="sailing">Sailing</option>
+                    <option value="trekking">Trekking</option>
+                    <option value="beach">Beach</option>
+                    <option value="aarti">Aarti</option>
+                    <option value="cycling">Cycling</option>
+                    <option value="rock_climbing">Rock Climbing</option>
+                    <option value="camping">Camping</option>
+                    <option value="paragliding">Paragliding</option>
+                    <option value="bungee_jumping">Bungee Jumping</option>
+                    <option value="scuba_diving">Scuba Diving</option>
+                    <option value="temple_visits">Temple Visits</option>
+                    <option value="festivals">Festivals</option>
+                    <option value="photography">Photography</option>
+                    <option value="pottery">Pottery</option>
+                </select>
+        </section>
+    </section>
+
+    <section id="service">
+        <section class="services">
+            <h1 class="heading-title">Our Services</h1>
+            <div class="box-container">
+                <div class="box">
+                    <a href="adventure.html">
+                        <img src="services1.jpg" alt="adventure">
+                        <h3>adventure</h3>
+                    </a>
+                </div>
+                <div class="box">
+                    <a href="tourguide.html">
+                        <img src="services2.jpg" alt="Tour Guide">
+                        <h3>Tour Guide</h3>
+                    </a>
+                </div>
+                <div class="box">
+                    <a href="trekking.html">
+                        <img src="services3.jpeg" alt="Trekking">
+                        <h3>Trekking</h3>
+                    </a>
+                </div>
+                <div class="box">
+                    <a href="campfire.html">
+                        <img src="services4.jpg" alt="Camp Fire">
+                        <h3>Camp Fire</h3>
+                    </a>
+                </div>
+                <div class="box">
+                    <a href="camping.html">
+                        <img src="services5.jpg" alt="Off-Road Camping">
+                        <h3>Off-Road Camping</h3>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <div class="container">
+        <section id="tours">
+            <h2>Featured Tours</h2>
+            <div class="card" id="tour1" onclick="window.location.href='tour1.html'">
+                <img src="tour1.jpeg" alt="Tour 1">
+                <h3>Gwalior Fort</h3>
+                <p>Explore where timeless beauty and ancient stories blend in a breathtaking embrace.</p>
+                <div class="star-rating">
+                    <span class="star checked">&#9733;</span>
+                    <span class="star checked">&#9733;</span>
+                    <span class="star checked">&#9733;</span>
+                    <span class="star checked">&#9733;</span>
+                    <span class="star unchecked">&#9733;</span>
+                </div>
+            </div>
+            <div class="card" id="tour2" onclick="window.location.href='tour2.html'">
+                <img src="tour2.jpg" alt="Tour 2">
+                <h3>Sailing</h3>
+                <p>Let the open sea whisper its tales as you sail through Goa's endless horizons of serenity.</p>
+                <div class="star-rating">
+                    <span class="star checked">&#9733;</span>
+                    <span class="star checked">&#9733;</span>
+                    <span class="star checked">&#9733;</span>
+                    <span class="star unchecked">&#9733;</span>
+                    <span class="star unchecked">&#9733;</span>
+                </div>
+            </div>
+            <div class="card" id="tour3" onclick="window.location.href='tour3.html'">
+                <img src="tour3.jpg" alt="Tour 3">
+                <h3>Fort Trek</h3>
+                <p>Discover Lohagad Hill Fort, a breathtaking trek that combines historical charm with stunning
+                    panoramic views.</p>
+                <div class="star-rating">
+                    <span class="star checked">&#9733;</span>
+                    <span class="star checked">&#9733;</span>
+                    <span class="star checked">&#9733;</span>
+                    <span class="star checked">&#9733;</span>
+                    <span class="star unchecked">&#9733;</span>
+                </div>
+            </div>
+            <div class="card" id="tour4" onclick="window.location.href='tour4.html'">
+                <img src="tour4.jpg" alt="Tour 4">
+                <h3>Agatti Beach</h3>
+                <p>Experience the untouched charm, a hidden gem perfect for relaxation and underwater adventure.</p>
+                <div class="star-rating">
+                    <span class="star checked">&#9733;</span>
+                    <span class="star checked">&#9733;</span>
+                    <span class="star checked">&#9733;</span>
+                    <span class="star checked">&#9733;</span>
+                    <span class="star checked">&#9733;</span>
+                </div>
+            </div>
+            <div class="card" id="tour5" onclick="window.location.href='tour5.html'">
+                <img src="tour5.jpg" alt="Tour 5">
+                <h3>Ganga Arti</h3>
+                <p>Experience the magic of Ganga Aarti in Varanasi, where glowing diya and sacred mantra bring the river
+                    to life in a stunning evening ritual.</p>
+                <div class="star-rating">
+                    <span class="star checked">&#9733;</span>
+                    <span class="star checked">&#9733;</span>
+                    <span class="star checked">&#9733;</span>
+                    <span class="star checked">&#9733;</span>
+                    <span class="star checked">&#9733;</span>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <div style="margin: 20px 0; text-align: center; color: #00796b">
+        <h2>Explore India</h2>
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d240918.114434501!2d77.034444!3d20.593684!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1e3bb4d37af7%3A0x555f7b9b67c8d8!2sIndia!5e0!3m2!1sen!2sus!4v1694440853440!5m2!1sen!2sus"
+            width="600"
+            height="450"
+            style="border: none; border-radius: 5px; width: 70%;"
+            allowfullscreen=""
+            loading="lazy">
+        </iframe>
+    </div>
+    
+    <div class="about" id="about">
+        <section class="aboutus">
+            <h2>About Us</h2>
+            <h3>Welcome to Khoj - Discover Yourself in the Perfect Adventure</h3>
+            <p>At Khoj, we believe that travel is not just about reaching a destination; it's about discovering new
+                facts of yourself along the way. We are a passionate team of travel enthusiasts dedicated to
+                crafting exceptional journeys that allow you to connect with the world in meaningful and
+                transformative ways.</p>
+            <h3>Our Mission</h3>
+            <p>Our mission is simple yet profound: to provide you with unforgettable travel experiences that help
+                you discover and embrace your true self. Whether you're seeking the thrill of an adventure, the
+                serenity of nature, or the rich tapestry of cultural exploration, Khoj is here to guide you every
+                step of the way.</p>
+            <h3>What We Offer</h3>
+            <ul>
+                <li><strong>Personalized Adventures:</strong> From thrilling treks and serene retreats to cultural
+                    immersions and off-the-beaten-path explorations, our customized travel packages are designed to
+                    cater to your unique interests and preferences.</li>
+                <li><strong>Expert Guidance:</strong> Our team of experienced travel experts and local guides are
+                    committed to ensuring that your journey is seamless and enriching. We offer insightful
+                    recommendations, insider tips, and the support you need to make the most of your adventure.</li>
+                <li><strong>Authentic Experiences:</strong> We pride ourselves on offering authentic experiences
+                    that allow you to engage with local cultures, traditions, and natural wonders. Our aim is to
+                    create meaningful connections between travelers and destinations.</li>
+            </ul>
+            <h3>Why Choose Khoj?</h3>
+            <ul>
+                <li><strong>Tailored Itineraries:</strong> We understand that every traveler is unique. That’s why
+                    we offer bespoke itineraries that are tailored to your specific desires and needs.</li>
+                <li><strong>Unparalleled Service:</strong> From the moment you reach out to us until the end of your
+                    journey, we are dedicated to providing you with exceptional service and support.</li>
+                <li><strong>Sustainable Travel:</strong> We are committed to promoting responsible and sustainable
+                    travel practices that respect the environment and support local communities.</li>
+            </ul>
+            <h3>Join Us on a Journey</h3>
+            <p>Embark on a journey with Khoj and discover how travel can be a path to self-discovery and personal
+                growth. Let us take you on an adventure where every moment is an opportunity to explore, learn, and
+                connect.</p>
+            <p>Thank you for choosing Khoj. We look forward to being part of your travel story.</p>
+        </section>
+    </div>
+
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <span onclick="document.getElementById('bookingModal').style.display='none'" class="close"
+                title="Close Modal">&times;</span>
+            <div class="booking-form">
+                <h1>Khoj</h1>
+                <form id="bookingForm" action="#" method="post">
+                    <label for="tour">Select Tour:</label>
+                    <div class="custom-select">
+                        <button type="button" class="select-btn">Select Tour</button>
+                        <div class="select-options">
+                            <div class="select-option" data-tour-id="tour-safari">
+                                <img src="wildness.jpeg" alt="Safari" class="tour-image">
+                                <div class="tour-info">
+                                    <h3>Safari</h3>
+                                    <p>Experience the thrill of wildlife in their natural habitat.</p>
+                                </div>
+                            </div>
+                            <div class="select-option" data-tour-id="tour-mountain-climbing">
+                                <img src="lonavala.jpeg" alt="Mountain Climbing" class="tour-image">
+                                <div class="tour-info">
+                                    <h3>Mountain Climbing</h3>
+                                    <p>Conquer majestic peaks and enjoy breathtaking views.</p>
+                                </div>
+                            </div>
+                            <div class="select-option" data-tour-id="tour-city-tour">
+                                <img src="mumbai.jpg" alt="City Tour" class="tour-image">
+                                <div class="tour-info">
+                                    <h3>City Tour</h3>
+                                    <p>Explore the vibrant life and landmarks of the city.</p>
+                                </div>
+                            </div>
+                            <div class="select-option" data-tour-id="tour-beach-vacation">
+                                <img src="alibaug.jpeg" alt="Beach Vacation" class="tour-image">
+                                <div class="tour-info">
+                                    <h3>Beach Vacation</h3>
+                                    <p>Relax on pristine beaches and enjoy the sun and sea.</p>
+                                </div>
+                            </div>
+
+                            <div class="select-option" data-tour-id="tour-cultural-heritage">
+                                <img src="ajanta.jpeg" alt="Cultural Heritage" class="tour-image">
+                                <div class="tour-info">
+                                    <h3>Cultural Heritage</h3>
+                                    <p>Discover the rich cultural heritage and historical landmarks.</p>
+                                </div>
+                            </div>
+
+                            <div class="select-option" data-tour-id="tour-cruise">
+                                <img src="tour2.jpg" alt="Cruise" class="tour-image">
+                                <div class="tour-info">
+                                    <h3>Cruise</h3>
+                                    <p>Sail through beautiful waters and enjoy luxurious amenities.</p>
+                                </div>
+                            </div>
+
+                            <div class="select-option" data-tour-id="tour-palace">
+                                <img src="activity1.jpg" alt="Mysore Palace" class="tour-image">
+                                <div class="tour-info">
+                                    <h3>Mysore Palace</h3>
+                                    <p>Explore the grandeur of Mysore Palace, a historic royal residence with stunning architecture.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="select-option" data-tour-id="tour-bird-watching">
+                                <img src="booking.jpg" alt="Bird Watching" class="tour-image">
+                                <div class="tour-info">
+                                    <h3>Bird Watching</h3>
+                                    <p>Experience bird watching in lush, serene environments across India's diverse ecosystems.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="select-option" data-tour-id="tour-hampi">
+                                <img src="activity3.jpg" alt="Hampi" class="tour-image">
+                                <div class="tour-info">
+                                    <h3>Hampi</h3>
+                                    <p>Discover the ancient ruins of Hampi, a UNESCO World Heritage site known for its historic temples and monuments.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="select-option" data-tour-id="tour-ganga-arti">
+                                <img src="tour5.jpg" alt="Ganga Arti" class="tour-image">
+                                <div class="tour-info">
+                                    <h3>Ganga Arti</h3>
+                                    <p>Witness the spiritual Ganga Arti ceremony on the banks of the holy river Ganges, an enchanting experience.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="hidden" id="tour" name="tour" required>
+                    </div>
+
+                    <label for="package">Select Package:</label>
+                    <select id="package" name="package" required>
+                        <option value="" disabled selected>Select Package</option>
+                        <option value="Standard">Standard</option>
+                        <option value="Deluxe">Deluxe</option>
+                        <option value="Premium">Premium</option>
+                    </select>
+
+                    <label for="name">Full Name:</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" required>
+
+                    <label for="date">Preferred Date:</label>
+                    <input type="date" id="date" name="date" required>
+
+                    <label for="number">Number of People:</label>
+                    <input type="number" id="number" name="number" min="1" required>
+
+                    <label for="message">Additional Requests:</label>
+                    <textarea id="message" name="message" rows="3"></textarea>
+
+                    <button type="submit">Submit Booking</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <section class="reviews">
+        <h2>Our Customers</h2>
+        <div class="review-container">
+            <button class="arrow left">&lt;</button>
+            <div class="review">
+                <p>"A fantastic experience! The tour was well-organized and the guides were very knowledgeable."</p>
+                <p class="author">Smriti</p>
+            </div>
+            <div class="review">
+                <p>"I had an amazing time at Ganga Aarti. The views were stunning!"</p>
+                <p class="author">Saurav</p>
+            </div>
+            <div class="review">
+                <p>"An unforgettable adventure experience. The activities were well-organized and the scenery was
+                    breathtaking!"</p>
+                <p class="author">Siya</p>
+            </div>
+            <div class="review">
+                <p>"Exploring Gwalior Fort was like stepping back in time. The grandeur and history of the place
+                    left me speechless!"</p>
+                <p class="author">Amit</p>
+            </div>
+            <div class="review">
+                <p>"The sailing experience was smooth and relaxing. It was a fantastic way to enjoy the beauty of
+                    the coast and unwind!"</p>
+                <p class="author">Vikram</p>
+            </div>
+            <button class="arrow right">&gt;</button>
+        </div>
+    </section>
+
+    <div class="packages" id="packages">
+        <h1>Packages By Interest</h1>
+        <div class="categories">
+            <a href="#wildlife" class="category">Wildlife</a>
+            <a href="#hill-station" class="category">Hill Station</a>
+            <a href="#pilgrimage" class="category">Pilgrimage</a>
+            <a href="#heritage" class="category">Heritage</a>
+            <a href="#beach" class="category">Beach</a>
+            <a href="#adventure" class="category">Adventure</a>
+            <a href="#trekking" class="category">Trekking</a>
+        </div>
+        <div class="tours">
+            <div id="wildlife" class="tour-category">
+                <div class="tour" onclick="window.location.href='safaari.html'">
+                    <h3>Ranthambore Safari</h3>
+                    <p>5 Nights - 6 Days</p>
+                </div>
+                <div class="tour">
+                    <h3>Bandhavgarh Wildlife Expedition</h3>
+                    <p>7 Nights - 8 Days</p>
+                </div>
+                <div class="tour">
+                    <h3>Kaziranga National Park</h3>
+                    <p>6 Nights - 7 Days</p>
+                </div>
+                <div class="tour">
+                    <h3>Sundarbans Tiger Reserve</h3>
+                    <p>4 Nights - 5 Days</p>
+                </div>
+                <div class="tour">
+                    <h3>Jim Corbett National Park</h3>
+                    <p>5 Nights - 6 Days</p>
+                </div>
+                <div class="tour">
+                    <h3>Periyar Wildlife Sanctuary</h3>
+                    <p>6 Nights - 7 Days</p>
+                </div>
+                <div class="tour">
+                    <h3>Gir National Park</h3>
+                    <p>5 Nights - 6 Days</p>
+                </div>
+                <div class="tour">
+                    <h3>Ranthambore National Park</h3>
+                    <p>6 Nights - 7 Days</p>
+                </div>
+                <div class="tour">
+                    <h3>Manas National Park</h3>
+                    <p>7 Nights - 8 Days</p>
+                </div>
+                <div class="tour">
+                    <h3>Wildlife Safari in Nepal</h3>
+                    <p>8 Nights - 9 Days</p>
+                </div>
+            </div>
+            <div id="beach" class="tour-category">
+                <div class="tour">
+                    <h3>Goa Beach Holiday</h3>
+                    <p>5 Nights - 6 Days</p>
+                </div>
+                <div class="tour">
+                    <h3>Andaman and Nicobar Islands</h3>
+                    <p>7 Nights - 8 Days</p>
+                </div>
+                <div class="tour">
+                    <h3>Kerala Beach Tour</h3>
+                    <p>6 Nights - 7 Days</p>
+                </div>
+                <div class="tour">
+                    <h3>Maldives Luxury Escape</h3>
+                    <p>5 Nights - 6 Days</p>
+                </div>
+                <div class="tour">
+                    <h3>Sri Lanka Beach Holiday</h3>
+                    <p>7 Nights - 8 Days</p>
+                </div>
+                <div class="tour">
+                    <h3>Goa Beach and Culture</h3>
+                    <p>6 Nights - 7 Days</p>
+                </div>
+                <div class="tour">
+                    <h3>Bali Beach and Spa</h3>
+                    <p>7 Nights - 8 Days</p>
+                </div>
+                <div class="tour">
+                    <h3>Philippines Island Tour</h3>
+                    <p>8 Nights - 9 Days</p>
+                </div>
+                <div class="tour">
+                    <h3>Thailand Beach Vacation</h3>
+                    <p>6 Nights - 7 Days</p>
+                </div>
+                <div class="tour">
+                    <h3>Hawaii Beach Getaway</h3>
+                    <p>10 Nights - 11 Days</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section contact-info" id="contact">
+                <h2>Contact Us </h2>
+                <p><strong>Address:</strong> Mumbai, Maharashtra, 400083</p>
+                <p><strong>Phone:</strong> +91 95</p>
+                <p><strong>Email: </strong><a href="mailto:ssinghsneha050@gmail.com">singh@gmail.com</a></p>
+            </div>
+            <div class="footer-section quick-links">
+                <h2>Quick Links</h2>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#service">Services</a></li>
+                    <li><a href="#packages">Packages</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section social-media">
+                <h2>Follow Us</h2>
+                <a href="#" title="Facebook" class="social-icon">F</a>
+                <a href="#" title="YouTube" class="social-icon">Y</a>
+                <a href="#" title="Instagram" class="social-icon">I</a>
+                <a href="#" title="LinkedIn" class="social-icon">L</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 KHOJ. Created by Sneha Singh.</p>
+        </div>
+    </footer>
+
+    <script>
+        function performSearch() {
+            var query = document.getElementById("searchInput").value;
+        }
+
+        var modal = document.getElementById('bookingModal');
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        };
+        document.getElementById('bookingForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            const tour = document.getElementById('tour').value;
+            const packageType = document.getElementById('package').value;
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const date = document.getElementById('date').value;
+            const number = document.getElementById('number').value;
+            const message = document.getElementById('message').value;
+            alert(`Booking Submitted!\n\nTour: ${tour}\nPackage: ${packageType}\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\nDate: ${date}\nNumber of People: ${number}\nAdditional Requests: ${message}`);
+            document.getElementById('bookingForm').reset();
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const selectBtn = document.querySelector('.select-btn');
+            const selectOptions = document.querySelector('.select-options');
+            const selectOptionElements = document.querySelectorAll('.select-option');
+            const hiddenInput = document.getElementById('tour');
+
+            selectBtn.addEventListener('click', function () {
+                selectOptions.classList.toggle('show');
+            });
+
+            selectOptionElements.forEach(option => {
+                option.addEventListener('click', function () {
+                    const tourId = this.getAttribute('data-tour-id');
+                    const tourName = this.querySelector('h3').textContent;
+
+                    hiddenInput.value = tourId;
+                    selectBtn.textContent = tourName;
+
+                    selectOptions.classList.remove('show');
+
+                    selectOptionElements.forEach(opt => opt.classList.remove('selected'));
+                    this.classList.add('selected');
+                });
+            });
+
+            document.addEventListener('click', function (event) {
+                if (!event.target.closest('.custom-select')) {
+                    selectOptions.classList.remove('show');
+                }
+            });
+        });
+
+    </script>
+</body>
+
+</html>

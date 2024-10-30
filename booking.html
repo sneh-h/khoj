@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#FF5722">
+    <title>Booking - Tour</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('booking.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #dd4f24;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .booking-form {
+            padding: 2rem;
+            max-width: 500px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(8px);
+            position: relative;
+            z-index: 1;
+        }
+
+        .booking-form h1 {
+            color: #dd4f24;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .booking-form label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            color: #dd4f24;
+        }
+
+        .booking-form input,
+        .booking-form select,
+        .booking-form textarea,
+        .booking-form button {
+            display: block;
+            width: 100%;
+            padding: 0.75rem;
+            margin: 0.5rem 0;
+            border-radius: 5px;
+            border: 2px solid #dd4f24;
+            font-size: 0.9rem;
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .booking-form textarea {
+            resize: vertical;
+        }
+
+        .booking-form button {
+            background-color: #dd4f24;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            padding: 0.75rem;
+        }
+
+        .booking-form button:hover {
+            background-color: #E64A19;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="booking-form">
+        <h1>Tour Booking Form</h1>
+        <form id="bookingForm" action="#" method="post">
+            <input type="hidden" id="tourName" name="tourName">
+
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="date">Preferred Date:</label>
+            <input type="date" id="date" name="date" required>
+
+            <label for="number">Number of People:</label>
+            <input type="number" id="number" name="number" min="1" required>
+
+            <label for="package">Select Package:</label>
+                    <select id="package" name="package" required>
+                        <option value="" disabled selected>Select Package</option>
+                        <option value="Standard">Standard</option>
+                        <option value="Deluxe">Deluxe</option>
+                        <option value="Premium">Premium</option>
+                    </select>
+
+            <label for="message">Additional Requests:</label>
+            <textarea id="message" name="message" rows="3"></textarea>
+
+            <button type="submit">Submit Booking</button>
+        </form>
+        <p id="tourDisplay" style="color: #dd4f24; font-weight: bold;"></p>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            const tour = urlParams.get('tour');
+            if (tour) {
+                document.getElementById('tourName').value = tour;
+                document.getElementById('tourDisplay').textContent = `You are booking: ${decodeURIComponent(tour)}`;
+            }
+        });
+
+        document.getElementById('bookingForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const date = document.getElementById('date').value;
+            const number = document.getElementById('number').value;
+            const message = document.getElementById('message').value;
+
+            alert(`Booking Submitted!\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\nDate: ${date}\nNumber of People: ${number}\nAdditional Requests: ${message}`);
+        });
+    </script>
+</body>
+
+</html>

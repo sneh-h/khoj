@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tours in Maharashtra</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        #tours-maharashtra {
+            background-color: #fff;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        #tours-maharashtra h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .box-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .box {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            overflow: hidden;
+            width: calc(33% - 20px);
+            text-align: left;
+            transition: transform 0.3s ease;
+        }
+        .box img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .box h3 {
+            margin: 15px;
+            font-size: 1.5em;
+            color: #333;
+        }
+        .box p {
+            margin: 0 15px 15px;
+            color: #666;
+        }
+        .box:hover {
+            transform: scale(1.05);
+        }
+        @media (max-width: 768px) {
+            .box {
+                width: calc(50% - 20px);
+            }
+        }
+        @media (max-width: 480px) {
+            .box {
+                width: calc(100% - 20px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <section id="tours-maharashtra">
+        <h2>Tours in Maharashtra</h2>
+        <div class="box-container">
+            <div class="box" onclick="window.location.href='ajanta.html'">
+                <img src="elephanta.jpeg" alt="Elephanta Caves">
+                <h3>Elephanta Caves</h3>
+                <p>Explore the Elephanta Caves, famous for their Hindu and Buddhist rock-cut sculptures and ancient religious art.</p>
+            </div>
+            <div class="box">
+                <img src="ajanta.jpeg" alt="Ajanta and Ellora Caves">
+                <h3>Ajanta and Ellora Caves</h3>
+                <p>Discover the Ajanta and Ellora Caves, renowned for their ancient rock-cut temples and exquisite frescoes and sculptures.</p>
+            </div>
+            <div class="box">
+                <img src="pune.jpg" alt="Pune">
+                <h3>Pune</h3>
+                <p>Experience Pune's rich cultural heritage with attractions like Shaniwarwada, Aga Khan Palace, and the vibrant street food scene.</p>
+            </div>
+            <div class="box">
+                <img src="mumbai.jpg" alt="Mumbai">
+                <h3>Mumbai</h3>
+                <p>Explore Mumbai, the bustling city known for its landmarks like the Gateway of India, Marine Drive, and Bollywood.</p>
+            </div>
+            <div class="box">
+                <img src="lonavala.jpeg" alt="Lonavala">
+                <h3>Lonavala</h3>
+                <p>Relax in Lonavala, a popular hill station with scenic views, waterfalls, and lush green landscapes.</p>
+            </div>
+            <div class="box">
+                <img src="khandala.avif" alt="Khandala">
+                <h3>Khandala</h3>
+                <p>Discover Khandala, another charming hill station near Lonavala, famous for its serene environment and natural beauty.</p>
+            </div>
+            <div class="box">
+                <img src="mahabaleshwar.jpg" alt="Mahabaleshwar">
+                <h3>Mahabaleshwar</h3>
+                <p>Visit Mahabaleshwar, known for its breathtaking viewpoints, strawberry farms, and cool climate.</p>
+            </div>
+            <div class="box">
+                <img src="alibaug.jpeg" alt="Alibaug">
+                <h3>Alibaug</h3>
+                <p>Enjoy a beach getaway in Alibaug, with its sandy shores, forts, and relaxing coastal ambiance.</p>
+            </div>
+            <div class="box">
+                <img src="ratnagiri.jpg" alt="Ratnagiri">
+                <h3>Ratnagiri</h3>
+                <p>Explore Ratnagiri, known for its scenic beaches, historical forts, and delectable seafood.</p>
+            </div>
+            <div class="box">
+                <img src="punchagni.jpeg" alt="Panchgani">
+                <h3>Panchgani</h3>
+                <p>Relax in Panchgani, a serene hill station with picturesque landscapes and pleasant weather.</p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
